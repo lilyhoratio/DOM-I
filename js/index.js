@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street <br> Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -84,7 +84,7 @@ contactHeader.textContent = siteContent["contact"]["contact-h4"];
 
 // const contactText = document.querySelector(".contact p"); //don't forget to use All, or indexing doesn't work
 const contactText = document.querySelectorAll(".contact p");
-contactText[0].textContent = siteContent["contact"]["address"];
+contactText[0].innerHTML = siteContent["contact"]["address"];
 contactText[1].textContent = siteContent["contact"]["phone"];
 contactText[2].textContent = siteContent["contact"]["email"];
 

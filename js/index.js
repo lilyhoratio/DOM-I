@@ -43,12 +43,34 @@ const siteContent = {
 const logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+const navBar = document.querySelector("nav");
+
+// If code is before for loop, will get overridden
+// const firstNavLink = document.createElement("a");
+// firstNavLink.textContent = "Yooo";
+// navBar.prepend(firstNavLink); 
+
+// const lastNavLink = document.createElement("a");
+// lastNavLink.textContent = "RaHHH!";
+// navBar.appendChild(lastNavLink);
+
 const navLinks = document.querySelectorAll("nav a");
+
 navLinks.forEach((element,index)=> {
   const navText = `nav-item-${index+1}`;
   element.textContent = siteContent["nav"][navText];
+  element.style.color = "lightgreen";
 })
 
+const firstNavLink = document.createElement("a");
+firstNavLink.textContent = "Yooo";
+navBar.prepend(firstNavLink); 
+
+const lastNavLink = document.createElement("a");
+lastNavLink.textContent = "RaHHH!";
+navBar.appendChild(lastNavLink);
+
+navLinks.forEach((element) => element.style.color = "lightgreen");
 
 // CTA
 
@@ -91,3 +113,4 @@ contactText[2].textContent = siteContent["contact"]["email"];
 // FOOTER
 const footer = document.querySelector("footer p");
 footer.textContent = siteContent["footer"]["copyright"];
+

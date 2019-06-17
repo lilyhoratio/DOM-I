@@ -41,16 +41,27 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-// let codeSnippet = document.getElementById("cta-img");
-// codeSnippet.setAttribute('src', siteContent["cta"]["img-src"]);
-
-let codeSnippet = document.querySelector("#cta-img");
-codeSnippet.setAttribute('src', siteContent["cta"]["img-src"]);
-
-// Nav Links
+// nav
 
 let navLinks = document.querySelectorAll("nav a");
 navLinks.forEach((element,index)=> {
-  let navText = `nav-item-${index+1}`;
+  const navText = `nav-item-${index+1}`;
   element.textContent = siteContent["nav"][navText];
 })
+
+
+// cta
+
+//Using getElement()
+// const codeSnippet = document.getElementById("cta-img");
+// codeSnippet.setAttribute('src', siteContent["cta"]["img-src"]);
+
+//Using querySelector()
+// const codeSnippet = document.querySelector("#cta-img");
+// codeSnippet.setAttribute('src', siteContent["cta"]["img-src"]);
+
+document.querySelector("#cta-img").setAttribute('src', siteContent["cta"]["img-src"]);
+document.querySelector(".cta-text h1").textContent = siteContent["cta"]["h1"];
+document.querySelector('.cta-text button').textContent = siteContent["cta"]["button"];
+
+

@@ -46,3 +46,11 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 let codeSnippet = document.querySelector("#cta-img");
 codeSnippet.setAttribute('src', siteContent["cta"]["img-src"]);
+
+// Nav Links
+
+let navLinks = document.querySelectorAll("nav a");
+navLinks.forEach((element,index)=> {
+  let navText = `nav-item-${index+1}`;
+  element.textContent = siteContent["nav"][navText];
+})

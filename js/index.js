@@ -61,12 +61,12 @@ navLinks.forEach((element,index)=> {
 // codeSnippet.setAttribute('src', siteContent["cta"]["img-src"]);
 
 document.querySelector("#cta-img").setAttribute('src', siteContent["cta"]["img-src"]);
-document.querySelector(".cta-text h1").innerHTML = siteContent["cta"]["h1"];
-// read into innerHTML vs. textContent
+document.querySelector(".cta-text h1").innerHTML = siteContent["cta"]["h1"]; // read into innerHTML vs. textContent
 document.querySelector(".cta-text button").textContent = siteContent["cta"]["button"];
 
 // MAIN CONTENT
 const mainContent = document.querySelectorAll(".main-content .text-content");
+// console.log(`main content ${mainContent}`);
 const mainContentSections = ['features', 'about', 'services', 'product', 'vision']
 
 mainContent.forEach((element, index) => {
@@ -75,7 +75,19 @@ mainContent.forEach((element, index) => {
   element.querySelector("p").textContent = siteContent["main-content"][`${sectionTitle}-content`];
 })
 
+const middleImg = document.querySelector("#middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
 // CONTACT
+const contactHeader = document.querySelector(".contact h4");
+contactHeader.textContent = siteContent["contact"]["contact-h4"];
+
+// const contactText = document.querySelector(".contact p"); //don't forget to use All, or indexing doesn't work
+const contactText = document.querySelectorAll(".contact p");
+contactText[0].textContent = siteContent["contact"]["address"];
+contactText[1].textContent = siteContent["contact"]["phone"];
+contactText[2].textContent = siteContent["contact"]["email"];
 
 // FOOTER
+const footer = document.querySelector("footer p");
+footer.textContent = siteContent["footer"]["copyright"];

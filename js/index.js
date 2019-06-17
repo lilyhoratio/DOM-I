@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM <br>Is <br>Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -37,20 +37,20 @@ const siteContent = {
   },
 };
 
+// NAV
+
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
+const logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-// nav
-
-let navLinks = document.querySelectorAll("nav a");
+const navLinks = document.querySelectorAll("nav a");
 navLinks.forEach((element,index)=> {
   const navText = `nav-item-${index+1}`;
   element.textContent = siteContent["nav"][navText];
 })
 
 
-// cta
+// CTA
 
 //Using getElement()
 // const codeSnippet = document.getElementById("cta-img");
@@ -61,7 +61,21 @@ navLinks.forEach((element,index)=> {
 // codeSnippet.setAttribute('src', siteContent["cta"]["img-src"]);
 
 document.querySelector("#cta-img").setAttribute('src', siteContent["cta"]["img-src"]);
-document.querySelector(".cta-text h1").textContent = siteContent["cta"]["h1"];
-document.querySelector('.cta-text button').textContent = siteContent["cta"]["button"];
+document.querySelector(".cta-text h1").innerHTML = siteContent["cta"]["h1"];
+// read into innerHTML vs. textContent
+document.querySelector(".cta-text button").textContent = siteContent["cta"]["button"];
+
+// MAIN CONTENT
+const mainContent = document.querySelectorAll(".main-content .text-content");
+const mainContentSections = ['features', 'about', 'services', 'product', 'vision']
+
+mainContent.forEach((element, index) => {
+  const sectionTitle = mainContentSections[index]; //loop through array defined above
+  element.querySelector("h4").textContent = siteContent["main-content"][`${sectionTitle}-h4`];
+  element.querySelector("p").textContent = siteContent["main-content"][`${sectionTitle}-content`];
+})
 
 
+// CONTACT
+
+// FOOTER

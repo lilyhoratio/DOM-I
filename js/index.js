@@ -45,7 +45,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 const navBar = document.querySelector("nav");
 
-// If code is before for loop, will get overridden
+// Before the for loop, these nav links get overridden/renamed
 // const firstNavLink = document.createElement("a");
 // firstNavLink.textContent = "Yooo";
 // navBar.prepend(firstNavLink); 
@@ -64,10 +64,12 @@ navLinks.forEach((element,index)=> {
 
 const firstNavLink = document.createElement("a");
 firstNavLink.textContent = "Yooo";
+firstNavLink.href = "#";
 navBar.prepend(firstNavLink); 
 
 const lastNavLink = document.createElement("a");
 lastNavLink.textContent = "RaHHH!";
+lastNavLink.href = "#";
 navBar.appendChild(lastNavLink);
 
 navLinks = document.querySelectorAll("nav a");
@@ -118,4 +120,8 @@ footer.textContent = siteContent["footer"]["copyright"];
 
 // STRETCH
 const body = document.querySelector("body").style.backgroundColor = 'lightblue';
-// body.style.backgroundColor = 'lightblue';
+
+document.querySelector('.cta-text button').onclick = function() {
+  let image = document.querySelector("#cta-img");
+  image.setAttribute('src', "https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg");
+};

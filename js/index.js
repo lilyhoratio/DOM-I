@@ -54,12 +54,12 @@ const navBar = document.querySelector("nav");
 // lastNavLink.textContent = "RaHHH!";
 // navBar.appendChild(lastNavLink);
 
-const navLinks = document.querySelectorAll("nav a");
+let navLinks = document.querySelectorAll("nav a");
 
 navLinks.forEach((element,index)=> {
   const navText = `nav-item-${index+1}`;
   element.textContent = siteContent["nav"][navText];
-  element.style.color = "lightgreen";
+  element.style.color = "green";
 })
 
 const firstNavLink = document.createElement("a");
@@ -70,7 +70,9 @@ const lastNavLink = document.createElement("a");
 lastNavLink.textContent = "RaHHH!";
 navBar.appendChild(lastNavLink);
 
-navLinks.forEach((element) => element.style.color = "lightgreen");
+navLinks = document.querySelectorAll("nav a");
+
+navLinks.forEach((element) => {element.style.color = "green"});
 
 // CTA
 
@@ -114,3 +116,6 @@ contactText[2].textContent = siteContent["contact"]["email"];
 const footer = document.querySelector("footer p");
 footer.textContent = siteContent["footer"]["copyright"];
 
+// STRETCH
+const body = document.querySelector("body").style.backgroundColor = 'lightblue';
+// body.style.backgroundColor = 'lightblue';
